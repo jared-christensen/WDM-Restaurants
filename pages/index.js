@@ -8,7 +8,7 @@ export default class Home extends React.Component {
     ));
     return (
       <div>
-        <Container>{items}</Container>
+        <Container pageTitle="All">{items}</Container>
       </div>
     );
   }
