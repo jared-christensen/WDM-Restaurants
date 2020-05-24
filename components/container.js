@@ -15,7 +15,7 @@ export default class Container extends React.Component {
           />
         </Head>
         <TypeNav></TypeNav>
-        <h1>{this.props.pageTitle} Restaurants</h1>
+        <h1>{this.props.pageTitle}</h1>
         {this.props.children}
       </div>
     );
