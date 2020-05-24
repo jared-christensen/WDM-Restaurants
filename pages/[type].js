@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import Container from "../components/container";
 import Card from "../components/card";
+import fetch from "isomorphic-unfetch";
 
 function Types({ data }) {
   const router = useRouter();

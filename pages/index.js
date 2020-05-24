@@ -1,5 +1,6 @@
 import Container from "../components/container";
 import Card from "../components/card";
+import fetch from "isomorphic-unfetch";
 
 export default class Home extends React.Component {
   render() {
