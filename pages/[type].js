@@ -2,11 +2,12 @@ import { useRouter } from "next/router";
 import Container from "../components/container";
 import Card from "../components/card";
 import fetch from "isomorphic-unfetch";
+import restaurants from "../restaurants.json";
 
 function Types({ data }) {
   const router = useRouter();
   const { type } = router.query;
-  const items = data.items.map((item, key) => {
+  const items = restaurants.map((item, key) => {
     if (item.type === type) {
       return <Card restaurant={item} key={key} />;
     }
@@ -41,12 +42,10 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
-export async function getStaticProps() {
-  const res = await fetch("http://localhost:3000/api/restaurants");
-  const data = await res.json();
+export function getStaticProps() {
   return {
     props: {
-      data,
+      restaurants,
     },
   };
 }

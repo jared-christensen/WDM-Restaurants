@@ -1,10 +1,10 @@
 import Container from "../components/container";
 import Card from "../components/card";
-import fetch from "isomorphic-unfetch";
+import restaurants from "../restaurants.json";
 
 export default class Home extends React.Component {
   render() {
-    const items = this.props.data.items.map((item, key) => (
+    const items = restaurants.map((item, key) => (
       <Card restaurant={item} key={key} />
     ));
     return (
@@ -13,14 +13,4 @@ export default class Home extends React.Component {
       </div>
     );
   }
-}
-
-export async function getStaticProps() {
-  const res = await fetch("http://localhost:3000/api/restaurants");
-  const data = await res.json();
-  return {
-    props: {
-      data,
-    },
-  };
 }
