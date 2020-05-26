@@ -8,7 +8,7 @@ export default class Card extends React.Component {
             {this.props.restaurant.address}
           </h6>
           <a
-            href="tel:+1-{ this.props.restaurant.phone }"
+            href={`tel:+1-${this.props.restaurant.phone}`}
             className="card-link"
           >
             {this.props.restaurant.phone}

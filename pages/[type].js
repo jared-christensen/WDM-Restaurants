@@ -1,10 +1,9 @@
 import { useRouter } from "next/router";
 import Container from "../components/container";
 import Card from "../components/card";
-import fetch from "isomorphic-unfetch";
 import restaurants from "../restaurants.json";
 
-function Types({ data }) {
+export default function Types() {
   const router = useRouter();
   const { type } = router.query;
   const items = restaurants.map((item, key) => {
@@ -20,34 +19,3 @@ function Types({ data }) {
     </div>
   );
 }
-
-export async function getStaticPaths() {
-  const paths = [
-    "/American",
-    "/With-Entertainment",
-    "/Asian",
-    "/Italian",
-    "/Mexican",
-    "/Other-Ethnic",
-    "/Seafood",
-    "/Sports-Bar-Pub-Grill",
-    "/Steakhouse",
-    "/Delis-Sandwiches",
-    "/Pizza",
-    "/Bakery-Coffee",
-    "/Ice-Cream-Yogurt",
-    "/Fast-Food",
-    "/Bars",
-  ];
-  return { paths, fallback: false };
-}
-
-export function getStaticProps() {
-  return {
-    props: {
-      restaurants,
-    },
-  };
-}
-
-export default Types;
