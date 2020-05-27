@@ -6,7 +6,7 @@ export default class Card extends React.Component {
           <h5 className="card-title">{this.props.restaurant.name}</h5>
           <h6 className="card-subtitle text-muted">
             <a
-              href={`https://www.google.com/maps/search/?api=1&query=${this.props.restaurant.address}`}
+              href={`https://www.google.com/maps/search/?api=1&query=${this.props.restaurant.name} ${this.props.restaurant.address}`}
             >
               {this.props.restaurant.address}
             </a>
