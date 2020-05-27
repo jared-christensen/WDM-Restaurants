@@ -5,7 +5,11 @@ export default class Card extends React.Component {
         <div className="card-body">
           <h5 className="card-title">{this.props.restaurant.name}</h5>
           <h6 className="card-subtitle text-muted">
-            {this.props.restaurant.address}
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=${this.props.restaurant.address}`}
+            >
+              {this.props.restaurant.address}
+            </a>
           </h6>
           <a
             href={`tel:+1-${this.props.restaurant.phone}`}
